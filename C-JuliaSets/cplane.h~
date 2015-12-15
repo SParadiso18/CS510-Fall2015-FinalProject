@@ -1,0 +1,32 @@
+// Define types as abstraction layer to protect against implementation chan
+typedef long double VALS;
+typedef unsigned long int POINTS;
+
+// Use abstract types inside matrix definition for robustness
+typedef struct cplane {
+  VALS xmin;
+  VALS xmax;
+  VALS ymin;
+  VALS ymax;
+
+  POINTS xpoints;
+  POINTS ypoints;
+
+  complex *mat;
+} CPLANE;
+
+// Constructor that initializes type in sensible way
+CPLANE new_cplane(const VALS, const VALS, const VALS, const VALS, const POINTS, const POINTS);
+//CPLANE constructor(const long double xmin, const long double xmax, const long double ymin, const long double ymax, const long double xpoints, const long double ypoints);
+//
+CPLANE make_complex(COMPLEX *cp, int r, int c);
+//
+void set_ac(CPLANE *cplane, int r, int c);
+//
+COMPLEX get_ap(CPLANE *cplane, int r, int c);
+//
+void print(const COMLPEX v);
+//
+void print_cp(const CPLANE *acp);
+//
+void cs(CPLANE cp);

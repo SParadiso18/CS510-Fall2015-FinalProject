@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+#define MAXITER 256;
+
+int main (int argc, char *argv[])
+{
+  /*struct CPLANE xmin;
+  struct CPLANE xmax;
+  struct CPLANE ymin;
+  struct CPLANE ymax;
+
+  struct CPLANE xpoints;
+  struct CPLANE ypoints;*/
+
+  struct CPLANE r;
+
+  struct COMPLEX creal;
+  struct COMPLEX cimag;
+  struct COMPLEX c;
+  struct COMPLEX z;
+
+  unsigned int out;
+
+
+  c = creal + cimag*i;
+
+  CPLANE r(xmin, xmax, ymin, ymax, xpoints, ypoints);
+
+  for(int i = 0; i < r; i ++)
+    {
+      z = xpoints + ypoints * i;
+    }
+
+  for(int i = 0; -2 <= -i || i <= 2 || i <= MAXITER; i++)
+    {
+      if(i <= MAXITER)
+	{
+	  juliamap(z,c);
+    
+	  out = i;
+	}
+      else
+	{
+	  out = 0;
+	}
+
+      return out;
+}
